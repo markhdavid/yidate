@@ -1,6 +1,6 @@
 <?php
 require 'yidate.php';
-/* print all test dates, all for year 2023 - OK that some don't exist, e.g., Feb 31 */
+/* print all test dates, year 2023 - OK some don't exist, e.g., Feb 31, 2023 */
 print_my_date(2023, 1, 1);
 print_my_date(2023, 1, 2);
 print_my_date(2023, 1, 3);
