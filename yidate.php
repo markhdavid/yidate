@@ -46,4 +46,40 @@ function print_my_date($year, $month, $day) {
     echo $formatted_date;
     echo "\n";
 }
+
+// Define the shortcode for english date
+function endate_shortcode_fn( $atts ) {
+    // Parse the shortcode attributes
+    $atts = shortcode_atts( array(
+        'year' => date( 'Y' ),
+        'month' => date( 'm' ),
+        'day' => date( 'd' )
+    ), $atts );
+
+    // Call the format_my_date() function with the shortcode attributes
+    $formatted_date = $format_english_date($atts['year'], $atts['month'], $atts['day']);
+
+    // Return the formatted date as the shortcode output
+    return $formatted_date;
+}
+
+// Define the shortcode for yiddish date
+function yidate_shortcode_fn( $atts ) {
+    // Parse the shortcode attributes
+    $atts = shortcode_atts( array(
+        'year' => date( 'Y' ),
+        'month' => date( 'm' ),
+        'day' => date( 'd' )
+    ), $atts );
+
+    // Call the format_my_date() function with the shortcode attributes
+    $formatted_date = $format_yiddish_date($atts['year'], $atts['month'], $atts['day']);
+
+    // Return the formatted date as the shortcode output
+    return $formatted_date;
+}
+
+add_shortcode( 'yidate', 'yidate_shortcode_fn' );
+add_shortcode( 'endate', 'endate_shortcode_fn' );
+
 ?>
