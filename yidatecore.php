@@ -27,26 +27,20 @@ function format_yiddish_date($year, $month, $day) {
     return $yiddish_date;
 }
 
-function print_my_date($year, $month, $day) {
-    // Format date in English
-    $formatted_date = format_english_date($year, $month, $day);
-    echo $formatted_date;
-    echo "\n";
+global $default_timezone;
+$default_timezone = 'America/New_York'; // set default timezone, default US Eastern
 
-    // Format date in Yiddish
-    $formatted_date = format_yiddish_date($year, $month, $day);
-    echo $formatted_date;
-    echo "\n";
+function get_shortcode_atts($atts) {
+    date_default_timezone_set($default_timezone);
+    return shortcode_atts(array('year' => intval(date("Y")), 'month' => intval(date("m")), 
+                                'day' => intval(date("d"))),
+                          $atts);
 }
 
 // Define the shortcode for english date
 function endate_shortcode_fn( $atts ) {
     // Parse the shortcode attributes
-    $atts = shortcode_atts( array(
-        'year' => date("Y"),
-        'month' => date("m"),
-        'day' => date("d")
-    ), $atts );
+    $atts = get_shortcode_atts($atts);
 
     // Call the format_english_date() function with the shortcode attributes
     $formatted_date = format_english_date($atts['year'], $atts['month'], $atts['day']);
@@ -58,11 +52,7 @@ function endate_shortcode_fn( $atts ) {
 // Define the shortcode for yiddish date
 function yidate_shortcode_fn( $atts ) {
     // Parse the shortcode attributes
-    $atts = shortcode_atts( array(
-        'year' => date("Y"),
-        'month' => date("m"),
-        'day' => date("d")
-    ), $atts );
+    $atts = get_shortcode_atts($atts);
 
     // Call the format_yiddish_date() function with the shortcode attributes
     $formatted_date = format_yiddish_date($atts['year'], $atts['month'], $atts['day']);

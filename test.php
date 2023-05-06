@@ -1,5 +1,19 @@
 <?php
 require 'yidatecore.php';
+
+function print_my_date($year, $month, $day) {
+    // Format date in English
+    $formatted_date = format_english_date($year, $month, $day);
+    echo $formatted_date;
+    echo "\n";
+
+    // Format date in Yiddish
+    $formatted_date = format_yiddish_date($year, $month, $day);
+    echo $formatted_date;
+    echo "\n";
+}
+
+
 /* print all test dates, year 2023 - OK some don't exist, e.g., Feb 31, 2023 */
 print_my_date(2023, 1, 1);
 print_my_date(2023, 1, 2);
