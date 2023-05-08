@@ -31,10 +31,65 @@ global $default_timezone;
 $default_timezone = 'America/New_York'; // set default timezone, default US Eastern
 
 function get_shortcode_atts($atts) {
-    date_default_timezone_set($default_timezone);
-    return shortcode_atts(array('year' => intval(date("Y")), 'month' => intval(date("m")), 
-                                'day' => intval(date("d"))),
-                          $atts);
+    // If year, month, or day are set in $atts and are integers in a
+    // valid range, they're used.  Note, however, that month/day
+    // overflows are considered valid, e.g., 31 Nov or 29 Feb in
+    // non-leap years. Otherwise, year defaults to the current year.
+    // If either month or day is unset or invalid, they default to the
+    // current month and day, according to global $default_timezone.
+
+    $year = isset($atts['year']) ? $atts['year'] : false;
+    $need_year = false;
+    if ($year !== false) {
+        $year = filter_var($year, FILTER_VALIDATE_INT);
+        if ($year === false || $year < 0 || $year > 9999) {
+            error_log("Warning: year " . $atts['year'] . " bad in shortcode, will use current year.");
+            $need_year = true;
+        }
+    } else {
+        $need_year = true;
+    };
+
+    $month = isset($atts['month']) ? $atts['month'] : false;
+    $need_month = false;
+    if ($month !== false) {
+        $month = filter_var($month, FILTER_VALIDATE_INT);
+        if ($month === false || $month < 1 || $month > 12) {
+            error_log("Warning: month " . $atts['month'] . " bad in shortcode, will use current month/day.");
+            $need_month = true;
+        }
+    } else {
+        $need_month = true;
+    };
+
+    $day = isset($atts['day']) ? $atts['day'] : false;
+    $need_day = false;
+    if ($day !== false) {
+        $day = filter_var($day, FILTER_VALIDATE_INT);
+        if ($day === false || $day < 1 || $day > 31) {
+            error_log("Warning: day " . $atts['day'] . " bad in shortcode, will use current month/day.");
+            $need_day = true;
+        }
+    } else {
+        $need_day = true;
+    };
+
+    
+    if ($need_year || $need_month || $need_day) {
+        global $default_timezone; 
+        $timezone = new DateTimeZone($default_timezone);
+        $date = new DateTime('now', $timezone);
+
+        if ($need_year) {
+            $year = (int) $date->format('Y'); // extract the year as an integer
+        };
+        if ($need_month || $need_day) { // Require both month and day, otherwise default both.
+            $month = (int) $date->format('n'); // extract the month as an integer
+            $day = (int) $date->format('j'); // extract the day as an integer
+        };
+    };
+
+    return array('year' => $year, 'month' => $month, 'day' => $day);
 }
 
 // Define the shortcode for english date

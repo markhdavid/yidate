@@ -1,6 +1,84 @@
 <?php
 require 'yidatecore.php';
 
+function print_shortcode_default_values_date() {
+    $atts = array(); // empty array to simulate default values
+
+    echo "Current date (default year, month, day):\n";
+
+    $formatted_date = endate_shortcode_fn($atts);
+    echo $formatted_date;
+    echo "\n";
+
+    $formatted_date = yidate_shortcode_fn($atts);
+    echo $formatted_date;
+    echo "\n\n";
+
+
+    $atts = array('year' => 1971);
+
+    echo "Year = 1971, default month and day:\n";
+
+    $formatted_date = endate_shortcode_fn($atts);
+    echo $formatted_date;
+    echo "\n";
+
+    $formatted_date = yidate_shortcode_fn($atts);
+    echo $formatted_date;
+    echo "\n\n";
+
+
+    $atts = array('month' => 12, 'day' => "31"); /* notice: integers in strings should be OK */
+
+    echo "Default year, month = 12, day = 31:\n";
+
+    $formatted_date = endate_shortcode_fn($atts);
+    echo $formatted_date;
+    echo "\n";
+
+    $formatted_date = yidate_shortcode_fn($atts);
+    echo $formatted_date;
+    echo "\n\n";
+
+    // Testing error checking:
+    $atts = array('year' => "-100"); /* notice: integers in strings ok, but out of range (0..9999) in this case */
+
+    echo "Year = -100 (BAD), default month/day:\n";
+
+    $formatted_date = endate_shortcode_fn($atts);
+    echo $formatted_date;
+    echo "\n";
+
+    $formatted_date = yidate_shortcode_fn($atts);
+    echo $formatted_date;
+    echo "\n\n";
+
+    $atts = array('month' => 13, 'day' => 31);
+
+    echo "Default year, month = 13 (BAD), day = 31:\n";
+
+    $formatted_date = endate_shortcode_fn($atts);
+    echo $formatted_date;
+    echo "\n";
+
+    $formatted_date = yidate_shortcode_fn($atts);
+    echo $formatted_date;
+    echo "\n\n";
+
+    $atts = array('month' => 12, 'day' => 0);
+
+    echo "Default year, month = 12, day = 0 (BAD):\n";
+
+    $formatted_date = endate_shortcode_fn($atts);
+    echo $formatted_date;
+    echo "\n";
+
+    $formatted_date = yidate_shortcode_fn($atts);
+    echo $formatted_date;
+    echo "\n\n";
+}
+
+
 function print_my_date($year, $month, $day) {
     // Format date in English
     $formatted_date = format_english_date($year, $month, $day);
@@ -12,6 +90,11 @@ function print_my_date($year, $month, $day) {
     echo $formatted_date;
     echo "\n";
 }
+
+
+/* print date via shortcodes, with default arguments, which should get
+   current date in the default timezone (Eastern) */
+print_shortcode_default_values_date();
 
 
 /* print all test dates, year 2023 - OK some don't exist, e.g., Feb 31, 2023 */
