@@ -26,5 +26,5 @@ Example: `Apr 17, 2023`
   * English date specifying year only (month/day default to current, shown on Apr 17): `[yidate year=1941]` Apr 17, 2023
   * English date specifying month/date only (year defaults to current, shown in 2023): `[yidate  month=4 day=17]` Apr 17, 2023
 
-## Author: Mark H. (Meyer) David (@markhdavid) for the (League for Yiddish, Inc.)[https://leagueforyiddish.org]
-## Copyright 2023 League for Yiddish, Inc.
+#### Author: Mark H. (Meyer) David (@markhdavid) for the (League for Yiddish, Inc.)[https://leagueforyiddish.org]
+#### Copyright 2023 League for Yiddish, Inc.
