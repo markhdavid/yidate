@@ -3,12 +3,12 @@
 ## Yiddish Date Format
 
 
-Yiddish date format (in transliteration): dem <day><day suffix> <month name> <year>
+Yiddish date format (in transliteration): `dem <day><day suffix> <month name> <year>`
 
 Example: `דעם 8טן מײַ 2023`
 
 
-English date format: <month name in English 3-letter abbreviation> <day>, <year>
+English date format: `<month name in English 3-letter abbreviation> <day>, <year>`
 
 Example: `Apr 17, 2023`
 
