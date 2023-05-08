@@ -25,6 +25,10 @@ Example: `Apr 17, 2023`
   * English date explicitly set as Apr 17, 2023: `[yidate year=2023 month=4 day=17]` Apr 17, 2023
   * English date specifying year only (month/day default to current, shown on Apr 17): `[yidate year=1941]` Apr 17, 2023
   * English date specifying month/date only (year defaults to current, shown in 2023): `[yidate  month=4 day=17]` Apr 17, 2023
+  
+## To upload, install, and activate this plugin in WordPress:
+
+Create a .zip file of this whole repo directory and note the location. Then in WordPress go to `Plugins > Add New`, click on `Upload Plugins` button, click `Choose File` button, then navigate to the .zip file and open it. Then click the `Install Now` button. Finally, click the `Activate Plugin` button.
 
 #### Author: Mark H. (Meyer) David ([@markhdavid](https://github.com/markhdavid)) for the [League for Yiddish, Inc.](https://leagueforyiddish.org)
 #### Copyright 2023 League for Yiddish, Inc.
