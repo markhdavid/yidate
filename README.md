@@ -1,13 +1,13 @@
-# yidate - a simple WordPress plugin to format a date in Yiddish.
+# yidate - a simple WordPress plugin to format a date in Yiddish
 
 ## Yiddish Date Format
 
 
 Yiddish date format (in transliteration): `dem <day><day suffix> <month name> <year>`
-
+```
 Example: `דעם 8טן מײַ 2023`
 Example: `דעם 20סטן דעצעמבער 2025`
-
+```
 
 ## Examples
 
