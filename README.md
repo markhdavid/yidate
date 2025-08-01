@@ -1,4 +1,4 @@
-# yidate - a simple WordPress plugin to format a date in English and Yiddish.
+# yidate - a simple WordPress plugin to format a date in Yiddish.
 
 ## Yiddish Date Format
 
