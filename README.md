@@ -4,10 +4,11 @@
 
 
 Yiddish date format (in transliteration): `dem <day><day suffix> <month name> <year>`
-```
+
 Example: `דעם 8טן מײַ 2023`
+
 Example: `דעם 20סטן דעצעמבער 2025`
-```
+
 
 ## Examples
 
