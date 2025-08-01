@@ -1,8 +1,7 @@
 <?php
 /*
 Plugin Name: yidate
-Description: A simple WordPress plugin to format a date in English and Yiddish.
-English date format: <month name in 3-letter abbreviation> <day>, <year>
+Description: A simple WordPress plugin to format a date in Yiddish.
 Yiddish date format (in transliteration): dem <day><day suffix> <month name> <year>
 Version: 1.0
 Author: Meyer David, League for Yiddish, Inc.
@@ -17,6 +16,5 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 
 require 'yidatecore.php';
 add_shortcode( 'yidate', 'yidate_shortcode_fn' );
-add_shortcode( 'endate', 'endate_shortcode_fn' );
 
 ?>

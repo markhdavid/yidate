@@ -6,11 +6,7 @@
 Yiddish date format (in transliteration): `dem <day><day suffix> <month name> <year>`
 
 Example: `דעם 8טן מײַ 2023`
-
-
-English date format: `<month name in English 3-letter abbreviation> <day>, <year>`
-
-Example: `Apr 17, 2023`
+Example: `דעם 20סטן דעצעמבער 2025`
 
 
 ## Examples
@@ -20,15 +16,9 @@ Example: `Apr 17, 2023`
   * Yiddish date specifying year only (month/day default to current, shown on May 8): `[yidate year=1941]` דעם 8טן מײַ 1941
   * Yiddish date specifying month/date only (year defaults to current, shown in 2023): `[yidate  month=5 day=8]` דעם 8טן מײַ 1941
 
-
-  * English current date (based on US/Eastern time, shown on Apr 17, 2023): `[yidate]` Apr 17, 2023
-  * English date explicitly set as Apr 17, 2023: `[yidate year=2023 month=4 day=17]` Apr 17, 2023
-  * English date specifying year only (month/day default to current, shown on Apr 17): `[yidate year=1941]` Apr 17, 2023
-  * English date specifying month/date only (year defaults to current, shown in 2023): `[yidate  month=4 day=17]` Apr 17, 2023
-  
 ## To upload, install, and activate this plugin in WordPress:
 
 Create a .zip file of this whole repo directory and note the location. Then in WordPress go to `Plugins > Add New`, click on `Upload Plugins` button, click `Choose File` button, then navigate to the .zip file and open it. Then click the `Install Now` button. Finally, click the `Activate Plugin` button.
 
 #### Author: Mark H. (Meyer) David ([@markhdavid](https://github.com/markhdavid)) for the [League for Yiddish, Inc.](https://leagueforyiddish.org)
-#### Copyright 2023 League for Yiddish, Inc.
+#### Copyright 2025 League for Yiddish, Inc.
