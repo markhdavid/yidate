@@ -20,7 +20,7 @@ Get the code: https://github.com/markhdavid/yidate.git — install it in wp-cont
   * Yiddish current date (based on US/Eastern time, shown on May 8, 2023): `[yidate]` דעם 8טן מײַ 2023
   * Yiddish date explicitly set as May 8, 2023: `[yidate year=2023 month=5 day=8]` דעם 8טן מײַ 2023
   * Yiddish date specifying year only (month/day default to current, shown on May 8): `[yidate year=1941]` דעם 8טן מײַ 1941
-  * Yiddish date specifying month/date only (year defaults to current, shown in 2023): `[yidate  month=5 day=8]` דעם 8טן מײַ 1941
+  * Yiddish date specifying month/date only (year defaults to current, shown in 2023): `[yidate  month=5 day=8]` דעם 8טן מײַ 2023
 
 ## To upload, install, and activate this plugin in WordPress:
 
