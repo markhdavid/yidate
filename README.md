@@ -10,6 +10,11 @@ Example: `דעם 8טן מײַ 2023`
 Example: `דעם 20סטן דעצעמבער 2025`
 
 
+## Get the Code
+
+Get the code: https://github.com/markhdavid/yidate.git — install it in wp-content/plugins or adapt the code as needed.
+
+
 ## Examples
 
   * Yiddish current date (based on US/Eastern time, shown on May 8, 2023): `[yidate]` דעם 8טן מײַ 2023
