@@ -1,10 +1,5 @@
 <?php
 
-function format_english_date($year, $month, $day) {
-    $date = date_create($year . '-' . $month . '-' . $day);
-    return date_format($date, 'M j, Y');
-}
-
 function format_yiddish_date($year, $month, $day) {
     $yiddish_month_dict = array(
                                 1 => 'יאַנואַר',
@@ -90,18 +85,6 @@ function get_shortcode_atts($atts) {
     };
 
     return array('year' => $year, 'month' => $month, 'day' => $day);
-}
-
-// Define the shortcode for english date
-function endate_shortcode_fn( $atts ) {
-    // Parse the shortcode attributes
-    $atts = get_shortcode_atts($atts);
-
-    // Call the format_english_date() function with the shortcode attributes
-    $formatted_date = format_english_date($atts['year'], $atts['month'], $atts['day']);
-
-    // Return the formatted date as the shortcode output
-    return $formatted_date;
 }
 
 // Define the shortcode for yiddish date

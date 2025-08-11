@@ -6,10 +6,6 @@ function print_shortcode_default_values_date() {
 
     echo "Current date (default year, month, day):\n";
 
-    $formatted_date = endate_shortcode_fn($atts);
-    echo $formatted_date;
-    echo "\n";
-
     $formatted_date = yidate_shortcode_fn($atts);
     echo $formatted_date;
     echo "\n\n";
@@ -18,10 +14,6 @@ function print_shortcode_default_values_date() {
     $atts = array('year' => 1971);
 
     echo "Year = 1971, default month and day:\n";
-
-    $formatted_date = endate_shortcode_fn($atts);
-    echo $formatted_date;
-    echo "\n";
 
     $formatted_date = yidate_shortcode_fn($atts);
     echo $formatted_date;
@@ -32,10 +24,6 @@ function print_shortcode_default_values_date() {
 
     echo "Default year, month = 12, day = 31:\n";
 
-    $formatted_date = endate_shortcode_fn($atts);
-    echo $formatted_date;
-    echo "\n";
-
     $formatted_date = yidate_shortcode_fn($atts);
     echo $formatted_date;
     echo "\n\n";
@@ -45,10 +33,6 @@ function print_shortcode_default_values_date() {
 
     echo "Year = -100 (BAD), default month/day:\n";
 
-    $formatted_date = endate_shortcode_fn($atts);
-    echo $formatted_date;
-    echo "\n";
-
     $formatted_date = yidate_shortcode_fn($atts);
     echo $formatted_date;
     echo "\n\n";
@@ -56,10 +40,6 @@ function print_shortcode_default_values_date() {
     $atts = array('month' => 13, 'day' => 31);
 
     echo "Default year, month = 13 (BAD), day = 31:\n";
-
-    $formatted_date = endate_shortcode_fn($atts);
-    echo $formatted_date;
-    echo "\n";
 
     $formatted_date = yidate_shortcode_fn($atts);
     echo $formatted_date;
@@ -69,10 +49,6 @@ function print_shortcode_default_values_date() {
 
     echo "Default year, month = 12, day = 0 (BAD):\n";
 
-    $formatted_date = endate_shortcode_fn($atts);
-    echo $formatted_date;
-    echo "\n";
-
     $formatted_date = yidate_shortcode_fn($atts);
     echo $formatted_date;
     echo "\n\n";
@@ -80,11 +56,6 @@ function print_shortcode_default_values_date() {
 
 
 function print_my_date($year, $month, $day) {
-    // Format date in English
-    $formatted_date = format_english_date($year, $month, $day);
-    echo $formatted_date;
-    echo "\n";
-
     // Format date in Yiddish
     $formatted_date = format_yiddish_date($year, $month, $day);
     echo $formatted_date;
