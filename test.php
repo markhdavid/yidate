@@ -56,11 +56,6 @@ function print_shortcode_default_values_date() {
 
 
 function print_my_date($year, $month, $day) {
-    // Format date in English
-    $formatted_date = format_english_date($year, $month, $day);
-    echo $formatted_date;
-    echo "\n";
-
     // Format date in Yiddish
     $formatted_date = format_yiddish_date($year, $month, $day);
     echo $formatted_date;
